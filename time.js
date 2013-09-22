@@ -5,8 +5,8 @@ function pad(n) { return n < 10 ? '0' + n : n }
 var server = net.createServer(function(socket) {
   d = new Date();
   s = d.getFullYear() + "-"
-    + pad(d.getMonth()) + "-"
-    + pad(d.getDay()) + " "
+    + pad(d.getMonth() + 1) + "-"
+    + pad(d.getDate()) + " "
     + pad(d.getHours()) + ":"
     + pad(d.getMinutes()) + "\n";
   socket.end(s);
