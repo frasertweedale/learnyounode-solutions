@@ -6,4 +6,4 @@ file = fs.readFileSync(filename);
 
 contents = file.toString();
 
-console.log(contents.split('\n').length);
+console.log(contents.split('\n').length - 1);
