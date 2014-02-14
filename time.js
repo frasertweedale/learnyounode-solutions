@@ -11,4 +11,4 @@ var server = net.createServer(function(socket) {
     + pad(d.getMinutes()) + "\n";
   socket.end(s);
 });
-server.listen(8000);
+server.listen(process.argv[2]);

@@ -11,4 +11,4 @@ server = http.createServer(function(request, response) {
     request.pipe(uc).pipe(response);
   }
 });
-server.listen(8000);
+server.listen(process.argv[2]);
