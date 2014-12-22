@@ -1,19 +1,21 @@
 var fs = require('fs');
+var path = require('path');
 
 module.exports = function(dirname, ext, callback) {
-  var pat = RegExp('\\.' + ext + '$');
+  var extension = "." + ext;
   fs.readdir(dirname, function(err, files) {
     if (err) {
       callback(err, null);
     }
     else {
       result = [];
-      for (i = 0; i < files.length; i++) {
-        if (pat.test(files[i])) {
-          result.push(files[i]);
+      files.forEach(function(entry) {
+        if (path.extname(entry) == extension) {
+          result.push(entry);
         }
-      }
+      });
       callback(null, result);
     }
   });
+  
 };
