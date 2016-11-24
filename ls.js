@@ -11,3 +11,18 @@ file = fs.readdir(dirname, function(err, files) {
     }
   }
 });
+
+//OR solution without using RegExp
+// var fs = require('fs');
+// var dirpath = process.argv[2];
+// var ext = process.argv[3];
+
+
+// fs.readdir(dirpath, function(err,lists){
+//   for(i=0; i<lists.length; i++){
+//     if(lists[i].split('.').pop() == ext){
+//       console.log(lists[i]);
+//     }
+//   } 
+// })
+
